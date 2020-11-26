@@ -1,0 +1,99 @@
+-
+    let winners = [
+        {
+            day: 7,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 8,
+            month: 'дек',
+            name: 'Антон Пампушный Пампушный'
+        },
+        {
+            day: 14,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 15,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 21,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 22,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 28,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 29,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },        {
+            day: 7,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 8,
+            month: 'дек',
+            name: 'Антон Пампушный Пампушный'
+        },
+        {
+            day: 14,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 15,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 21,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 22,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 28,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+        {
+            day: 29,
+            month: 'дек',
+            name: 'Антон Пампушный'
+        },
+    ];
+
+section#winners.page.page-4.js-page.js-winners
+    .container.container_winners.page__right.container_page-4
+        .content.content__full.js-winners-content
+            h3.title.page-4__title
+                | Победители
+            .raffle-card__list.js-slider-container
+                for card in winners
+                    .raffle-card
+                        .raffle-card-inner
+                            .raffle-card__content
+                                .raffle-card__content-inner
+                                    .raffle-card__name=card.name
+                                    .raffle-card__city г. Кемерово
+                                .raffle-card__number 295*****71
+            .copyright
+                | © 2019 Новэкс. Все права защищены
