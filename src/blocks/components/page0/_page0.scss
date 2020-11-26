@@ -3,118 +3,281 @@
 
   &__decor {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: url(../img/page0/decor.png) no-repeat center;
+    background-size: cover;
   }
 
-  &__money {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: auto;
-    margin: auto;
-    background: no-repeat center right url("../img/page0/money.png");
-    background-size: contain;
-    max-width: 1240px;
-    width: 100%;
-    height: 100%;
-    max-height: 880px;
-    z-index: 1;
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    color: #fff;
+  }
 
-    @include notebook {
-      max-width: 75vw;
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+
+  &__buy {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 84px;
+    text-transform: uppercase;
+    margin-right: 20px;
+  }
+
+  &__sip {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 59px;
+    margin-right: 14px;
+  }
+
+
+  &__price {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 4px 12px 4px 16px;
+    background: #FF4F73;
+
+    &-value {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 72px;
     }
 
-    @include lg-block {
-      bottom: 0;
-      top: auto;
-      left: -20%;
-      right: 0;
-      margin: auto;
-      max-width: 300%;
-      max-height: 100vh;
-      background-size: contain;
+    &-cur {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 52px;
+      margin-left: 3px;
+    }
+  }
 
-      @include sm-block {
-        max-height: 80vh;
-        left: -40%;
-        transform: scale(1.5);
+  &__products {
+
+    &-text {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+      margin-top: 12px;
+      max-width: 455px;
+    }
+
+    &-img {
+      margin-top: 55px;
+      max-width: 713px;
+      max-height: 450px;
+      width: 100%;
+
+      & img {
+        max-width: 100%;
+        max-height: 100%;
       }
     }
   }
 
-  & .amount {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    font-weight: 500;
-    font-size: 8.66vh;
-    line-height: 1;
+  &__title {
+    display: inline-block;
+    padding: 16px 10px 4px;
+    background: #FF4F73;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4.1vw;
+    line-height: 4.375vw;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: #fff;
-    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
 
-    @include notebook {
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 6.29vh  /* 62/9.85 */;
+  &__wrap {
+    position: relative;
+  }
+
+  &__watch {
+    position: absolute;
+    top: 0;
+    left: -235px;
+    display: flex;
+
+    &-img {
+      max-width: 541px;
+      max-height: 541px;
+      width: 100%;
+
+      & img {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
 
-    @include sm-block {
-      font-size: 35px;
+    &-text {
+      position: relative;
+      left: -90px;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 27px;
+      line-height: 33px;
+      color: #fff;
+      max-width: 240px;
+      margin-top: 140px;
     }
+  }
 
-    &__wrap {
+  &__prize {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+
+    &-data {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      max-width: 665px;
+    }
+
+    &-count {
+      position: relative;
+    }
+
+    &-count-inner {
+      position: relative;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 220px;
+      line-height: 277px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #FFFFFF 0%, #7EC9FA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 2;
+    }
+    // Тень не работает с -webkit-text-fill-color: transparent
+    // поэтому пришлось дублировать
+    &-count-shadow {
+      z-index: 1;
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 100%;
+      height: 100%;
+      font-weight: bold;
+      font-size: 220px;
+      line-height: 277px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #FFFFFF 0%, #7EC9FA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    &-text {
+      margin-left: 8px;
+    }
+
+    &-more {
+      font-family: Montserra, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+      color: #fff;
+    }
+
+    &-final {
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 29px;
+      line-height: 35px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    &-super {
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 49px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #FFFFFF 0%, #7EC9FA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-img {
+      position: absolute;
+      z-index: 3;
+      top: 120px;
+      left: -40px;
+      max-width: 476px;
+      max-height: 413px;
+      width: 100%;
+
+      & img {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 
-  & .currency {
-    font-size: 2.57vh;
-    line-height: 1.5;
-    font-weight: 500;
-    color: #fff;
-    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-    margin-left: 20px;
-
-    @include notebook {
-      margin-right: 30px;
-    }
-
-    @include sm-block {
-      margin-left: 10px;
-      margin-right: 20px;
-    }
-  }
-
-  & .button {
-    margin-top: 5.08vh  /* 50/9.85 */;
-
-    @include notebook {
-
-    }
-
-    @include sm-block {
-      margin-top: 30px;
-    }
+  &__button {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 8.49vh;
+    margin: auto;
+    text-align: center;
   }
 
   & .container {
+    background: linear-gradient(180deg, #007AC9 0%, #518ADC 20.36%, #7EA1FC 37.05%, #00A0E3 56.07%, #00A0E3 83.1%, #007AC9 96.12%);
+    height: #{calc(100vh * 5)};
+    overflow: hidden;
+  }
+
+  & .content__center {
     display: flex;
-    @include lg-block {
-      flex-direction: column;
-    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6.6vh;
+  }
+
+  & .content__subtitle {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    margin-top: 24px;
+  }
+
+  & .content__box {
+    display: flex;
+  }
+
+  & .content {
+    padding-top: 5.5vh;
   }
 
   & .content__left,
   & .content__right {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     width: 50%;
     @include lg-block {
       width: 100%;
@@ -124,20 +287,16 @@
 
   & .content__left {
     position: relative;
-    background: linear-gradient(138.65deg, #00A0E3 3.27%, #007AC9 78.83%);
 
     @include lg-block {
-      height: 75vh;
       box-sizing: border-box;
     }
   }
 
   & .content__right {
     position: relative;
-    background: url('../img/page0/bg-right.png') no-repeat center #D74C6D;
-    height: 100%;
-    background-size: cover;
-    padding-left: 21.51vw  /* 413/19.2 */;
+    height: auto;
+    padding-left: 8.51vw;
     @include lg-block {
       padding: 20px 15px;
       height: 90vh;
@@ -145,149 +304,6 @@
 
     @include sm-block {
       height: 70vh;
-    }
-  }
-
-
-  &__text {
-    margin-top: 23.63vh;
-    z-index: 10;
-
-    @include notebook {
-      margin-top: 15.23vh  /* 150/9.85 */;
-    }
-
-    @include lg-block {
-      margin-top: 30px;
-      //padding-bottom: 280px;
-    }
-
-    @include sm-block {
-      margin-top: 15px;
-      //padding-bottom: 300px;
-    }
-  }
-
-  &__date {
-    font-size: 2.78vh  /* 24/9.85 */;
-    line-height: 3.50vh  /* 32/9.85 */;
-    color: #fff;
-    margin-bottom: 0.92vh  /* 16/9.85 */;
-    font-weight: 500;
-    @include lg-block {
-      font-size: 20px;
-      line-height: 32px;
-      margin-bottom: 16px;
-    }
-  }
-
-  &__title {
-    color: #fff;
-    font-size: 9.08vh;
-    line-height: 11.45vh;
-    margin-bottom: 0.20vh;
-    font-weight: 800;
-    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-
-    @include lg-block {
-      font-size: 76px;
-      line-height: 68px;
-      margin-bottom: 5px;
-    }
-
-    @include sm-block {
-      font-size: 58px;
-      line-height: 1;
-      margin-bottom: 15px;
-    }
-  }
-
-  .counter {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: auto;
-    margin: auto;
-    right: -198px;
-    width: 148px;
-    height: 148px;
-    background: #fff;
-    color: #007AC9;
-    font-weight: 800;
-    border-radius: 50%;
-    text-shadow: none;
-
-    @include notebook {
-      position: relative;
-      right: auto;
-      left: 0;
-      margin-right: auto;
-      margin-left: 0;
-      width: 98px;
-      height: 98px;
-    }
-
-    @include lg-block {
-      width: 58px;
-      height: 58px;
-    }
-
-
-    &__inner {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      margin: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    &__multi {
-      font-size: 3.86vh  /* 38/9.85 */;
-      line-height: 4.87vh  /* 48/9.85 */;
-      margin-right: 7px;
-
-      @include notebook {
-        font-size: 2.84vh  /* 28/9.85 */;
-        line-height: 3.65vh  /* 36/9.85 */;
-      }
-
-      @include lg-block {
-        font-size:  18px;
-        line-height: 1;
-        margin-right: 1px;
-      }
-    }
-
-    &__number {
-      font-size: 8.93vh  /* 88/9.85 */;
-      line-height: 11.27vh  /* 111/9.85 */;
-      margin-right: 10px;
-
-      @include notebook {
-        font-size: 6.9vh  /* 68/9.85 */;
-        line-height: 8.12vh  /* 80/9.85 */;
-      }
-      @include lg-block {
-        font-size: 28px;
-        line-height: 1;
-        margin-right: 2px;
-      }
-    }
-
-    &__units {
-      font-size: 2.74vh  /* 27/9.85 */;
-      line-height: 3.45vh  /* 34/9.85 */;
-      @include notebook {
-        font-size: 2.23vh  /* 22/9.85 */;
-        line-height: 2.84vh  /* 28/9.85 */;
-      }
-      @include lg-block {
-        font-size: 14px;
-        line-height: 1;
-      }
     }
   }
 
