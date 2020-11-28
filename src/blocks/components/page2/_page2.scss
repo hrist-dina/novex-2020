@@ -2,14 +2,17 @@
 
   &__title {
     font-style: normal;
-    font-weight: 800;
-    font-size: 80px;
-    line-height: 84px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
+    @include lg-block {
+      font-size: 48px;
+      line-height: 52px;
+    }
+    @include sm-block {
+      font-size: 30px;
+    }
   }
-
 
   &__check {
     position: absolute;
@@ -50,6 +53,7 @@
       display: flex;
       align-items: flex-end;
       position: relative;
+      margin-top: 30px;
 
       & img {
         display: inherit;
@@ -95,6 +99,7 @@
     @include lg-block {
       width: 100%;
       overflow: hidden;
+      padding-top: 40px;
     }
   }
 
@@ -108,22 +113,27 @@
     @include lg-block {
       width: 100%;
       overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+      padding-left: 15px;
+      padding-right: 15px;
     }
-
 
     &:before {
       content: '';
       position: absolute;
-      left: -10px;
-      background: #FFFFFF;
+      left: -0.52vw;
+      background: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
       border-radius: 40px;
       transform: rotate(8.4deg);
-      width: 1027px;
-      height: 1151px;
+      width: 53.48vw;
+      height: 114.98vh;
+      @include lg-block {
+        content: none;
+      }
     }
   }
-
 
   & .block-vertical-center {
 
@@ -142,7 +152,6 @@
   }
 }
 
-
 .ticket-form {
 
 }
@@ -153,6 +162,9 @@
   border: 1px solid #CDD2D5;
   box-sizing: border-box;
   border-radius: 6px;
+  @include lg-block {
+    margin-bottom: 24px;
+  }
 
   &.error {
     border-color: #FF4F73;
@@ -171,19 +183,20 @@
 .ticket-form__elem-title {
   white-space: nowrap;
   position: absolute;
-  top: 21px;
+  top: 2.09vh;
   left: 0;
   color: #5a6555;
   font-family: Geometria, sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  padding: 0 25px;
+  font-size: 1.79vh;
+  line-height: 2.39vh;
+  padding: 0 1.30vw;
   -moz-transition: top 0.3s ease, font-size 0.3s ease;
   -webkit-transition: top 0.3s ease, font-size 0.3s ease;
   transition: top 0.3s ease, font-size 0.3s ease;
 
-  @include md-block {
+  @include lg-block {
+    top: 14px;
     font-size: 18px;
     line-height: 22px;
     padding: 0 15px;
@@ -204,21 +217,23 @@
   font-family: Geometria, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.79vh;
+  line-height: 2.39vh;
   color: #443E3E;
   box-sizing: border-box;
-  height: 64px;
-  padding: 6px 24px 0;
+  height: 6.39vh;
+  padding: 0.59vh 1.25vw 0;
   width: 100%;
   -moz-transition: border 0.3s ease;
   -webkit-transition: border 0.3s ease;
   transition: border 0.3s ease;
   border-radius: 6px;
 
-  @include md-block {
+  @include lg-block {
     height: 50px;
     padding: 15px 15px 0;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 
@@ -233,19 +248,25 @@
   font-size: 1.62vh  /* 16/9.85 */;
   line-height: 2.44vh  /* 24/9.85 */;
   color: #fff;
-  width: #{calc(100% - 355px)};
+  width: #{calc(100% - 18.48vw)};
 
   @include lg-block {
     margin-top: 20px;
-    margin-bottom: 24px;
+    margin-left: 0;
     font-size: 16px;
     line-height: 24px;
+    width: 100%;
   }
 }
 
 .ticket-form__footer {
   display: flex;
+  align-items: flex-start;
   margin-top: 4vh;
+  @include lg-block {
+    margin-top: 30px;
+    flex-direction: column;
+  }
 }
 
 .ticket-form__verification-check {
@@ -253,6 +274,9 @@
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
+  @include lg-block {
+    margin-top: 0;
+  }
 }
 
 .ticket-form__verification-text {
@@ -262,10 +286,13 @@
   font-family: Geometria, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
-  line-height: 20px;
+  font-size:  1.49vh;
+  line-height: 1.99vh;
   color: #757070;
-
+  @include lg-block {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
 .ticket-form__verification-text a {
@@ -293,10 +320,15 @@
 }
 
 .ticket-form__elem.active .ticket-form__elem-title {
-  top: 4px;
-  font-size: 15px;
-  line-height: 19px;
+  top: 0.39vh;
+  font-size: 1.49vh;
+  line-height: 1.89vh;
   color: #CCCCCC;
+  @include lg-block {
+    top: 4px;
+    font-size: 15px;
+    line-height: 19px;
+  }
 }
 
 .tablet .active .ticket-form__elem-title {
@@ -304,25 +336,26 @@
   font-size: 1.2rem;
 }
 
-
-
 .tablet .error .ticket-form__elem-title {
   top: -25px;
   font-size: 1.2rem;
   color: #ED395E;
 }
 
-
-
 .ticket-form__elem.success input {
   border-color: #e5e9ed;
 }
 
 .ticket-form__elem.success .ticket-form__elem-title {
-  top: 4px;
-  font-size: 15px;
-  line-height: 19px;
+  top: 0.39vh;
+  font-size: 1.49vh;
+  line-height: 1.89vh;
   color: #CCCCCC;
+  @include lg-block {
+    top: 4px;
+    font-size: 15px;
+    line-height: 19px;
+  }
 }
 
 .error.success .ticket-form__elem-title {
@@ -459,7 +492,7 @@
 
 
 .ticket-form-success {
-  background: url('../img/noise.png'), #007AC9;
+  background: #007AC9;
   background-size: contain;
   width: 100%;
   height: 100%;
@@ -490,7 +523,7 @@
 .ticket-form-success__button {
   margin-top: 3vh;
 }
-
+.ticket-form-success__title,
 .ticket-form-success__text {
   margin-top: 2vh;
   color: #F74A54;

@@ -29,26 +29,28 @@
     width: 45%;
     @include lg-block {
       padding: 40px 15px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
     }
 
     &:before {
       content: '';
       position: absolute;
-      top: -120px;
-      left: -120px;
+      top: -11.98vh;
+      left: -6.25vw;
       z-index: -1;
-      width: 1003px;
-      height: 933px;
+      width: 52.23vw;
+      height: 93.2vh;
       background: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
       border-radius: 40px;
       transform: rotate(8deg);
+      @include lg-block {
+        content: none;
+      }
     }
 
     & .title {
-      font-weight: 800;
-      font-size: 80px;
-      line-height: 84px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #EEAED0;
@@ -69,9 +71,6 @@
 
     & .title {
       font-style: normal;
-      font-weight: 800;
-      font-size: 80px;
-      line-height: 84px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #fff;
@@ -81,6 +80,9 @@
 
   &__text {
     margin-top: 4.8vh;
+    @include md-block {
+      margin-top: 20px;
+    }
   }
 
   &__list {
@@ -96,12 +98,26 @@
       position: relative;
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 27px;
+      font-size: 1.79vh;
+      line-height: 2.69vh;
       color: #474747;
-      margin-bottom: 40px;
+      margin-bottom: 3.99vh;
       counter-increment: counter;
-      padding-left: 106px;
+      padding-left: 5.52vw;
+
+      @include lg-block {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 30px;
+        padding-left: 86px;
+      }
+
+      @include md-block {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 20px;
+        padding-left: 42px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -114,17 +130,25 @@
         top: 0;
         font-style: normal;
         font-weight: 300;
-        font-size: 120px;
-        line-height: 120px;
+        font-size: 11.98vh;
+        line-height: 11.98vh;
         text-align: right;
         font-feature-settings: 'tnum' on, 'lnum' on;
         color: #F1ECF8;
+        @include lg-block {
+          font-size: 80px;
+          line-height: 80px;
+        }
+        @include md-block {
+          font-size: 52px;
+          line-height: 52px;
+        }
       }
     }
   }
 
   &__button {
-    margin-top: 40px;
+    margin-top: 3.99vh;
     text-align: center;
     align-self: center;
   }
@@ -132,9 +156,17 @@
   &__product {
     position: relative;
     display: inline-block;
-    max-width: 280px;
-    margin-right: 40px;
+    max-width: 14.58vw;
+    margin-right: 1.04vw;
+    margin-left: 1.04vw;
     text-align: center;
+    margin-top: 1.2vh;
+    @include lg-block {
+      max-width: 280px;
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -147,16 +179,16 @@
 
     &-count {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 60px;
-      height: 60px;
+      top: 0.99vh;
+      right: 0.52vw;
+      width: 3.125vw;
+      height: 5.99vh;
       padding: 11px 12px 15px;
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 28px;
-      line-height: 34px;
+      font-size: 2.79vh;
+      line-height: 3.39vh;
       text-align: center;
       color: #fff;
       background: #FF4F73;
@@ -165,37 +197,57 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include lg-block {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
 
     &-row {
       display: flex;
       justify-content: center;
-
-      & + & {
-        margin-top: 1.2vh;
+      @include lg-block {
+        flex-wrap: wrap;
       }
     }
 
     &-img {
-      max-width: 280px;
-      max-height: 280px;
+      max-width: 14.58vw;
+      max-height: 27.97vh;
       width: 100%;
+
+      @include lg-block {
+        max-width: 200px;
+        max-height: 200px;
+        margin: auto;
+      }
 
       & img {
         max-width: 100%;
         max-height: 100%;
+        margin: auto;
       }
     }
 
     &-name {
       font-style: normal;
       font-weight: 500;
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 1.79vh;
+      line-height: 2.39vh;
       color: #fff;
-      margin-top: 20px;
-      padding: 0 30px;
+      margin-top: 1.99vh;
+      padding: 0 1.5625vw;
       box-sizing: border-box;
+      @include lg-block {
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 14px;
+        padding: 0 20px;
+      }
     }
   }
 }

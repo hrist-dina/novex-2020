@@ -20,23 +20,41 @@
   &__head {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__buy {
     font-weight: 700;
-    font-size: 80px;
-    line-height: 84px;
+    font-size: 7.99vh;
+    line-height: 8.39vh;
     text-transform: uppercase;
     margin-right: 20px;
+    @include lg-block {
+      font-size: 60px;
+      line-height: 74px;
+    }
+    @include md-block {
+      font-size: 48px;
+      line-height: 54px;
+      margin-right: 10px;
+    }
   }
 
   &__sip {
     font-weight: 400;
-    font-size: 48px;
-    line-height: 59px;
+    font-size: 4.79vh;
+    line-height: 5.89vh;
     margin-right: 14px;
+    @include lg-block {
+      font-size: 36px;
+      line-height: 48px;
+    }
+    @include md-block {
+      font-size: 32px;
+      line-height: 40px;
+      margin-right: 10px;
+    }
   }
-
 
   &__price {
     display: inline-flex;
@@ -45,20 +63,39 @@
     align-items: flex-end;
     padding: 4px 12px 4px 16px;
     background: #FF4F73;
+    @include md-block {
+      padding: 2px 8px;
+    }
 
     &-value {
       font-weight: 700;
-      font-size: 64px;
-      line-height: 72px;
+      font-size: 6.39vh;
+      line-height: 7.19vh;
+      @include lg-block {
+        font-size: 54px;
+        line-height: 62px;
+      }
+      @include md-block {
+        font-size: 48px;
+        line-height: 54px;
+      }
     }
 
     &-cur {
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: 400;
-      font-size: 38px;
-      line-height: 52px;
+      font-size: 3.78vh;
+      line-height: 5.19vh;
       margin-left: 3px;
+      @include lg-block {
+        font-size: 32px;
+        line-height: 42px;
+      }
+      @include md-block {
+        font-size: 28px;
+        line-height: 36px;
+      }
     }
   }
 
@@ -66,17 +103,31 @@
 
     &-text {
       font-weight: 500;
-      font-size: 24px;
-      line-height: 36px;
-      margin-top: 12px;
-      max-width: 455px;
+      font-size: 2.39vh;
+      line-height: 3.59vh;
+      margin-top: 1.19vh;
+      max-width: 45.45vh;
+      @include lg-block {
+        font-size: 22px;
+        line-height: 32px;
+        margin-top: 10px;
+        max-width: 420px;
+      }
     }
 
     &-img {
-      margin-top: 55px;
-      max-width: 713px;
-      max-height: 450px;
+      margin-top: 5.49vh;
+      max-width: 37.13vw;
+      max-height: 44.95vh;
       width: 100%;
+      @include lg-block {
+        margin-top: 50px;
+        max-width: 700px;
+        max-height: 400px;
+      }
+      @include md-block {
+        margin-top: 20px;
+      }
 
       & img {
         max-width: 100%;
@@ -96,6 +147,19 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
+    @include lg-block {
+      font-size: 60px;
+      line-height: 74px;
+    }
+    @include md-block {
+      padding: 12px 8px 2px;
+      font-size: 54px;
+      line-height: 60px;
+    }
+    @include sm-block {
+      font-size: 36px;
+      line-height: 28px;
+    }
   }
 
   &__wrap {
@@ -105,13 +169,29 @@
   &__watch {
     position: absolute;
     top: 0;
-    left: -235px;
+    left: -12.23vw;
     display: flex;
+    @include lg-block {
+      position: relative;
+      top: -20px;
+      left: 0;
+    }
+    @include sm-block {
+      top: 0;
+    }
 
     &-img {
-      max-width: 541px;
-      max-height: 541px;
+      max-width: 28.17vw;
+      max-height: 54.04vh;
       width: 100%;
+
+      @include lg-block {
+        max-width: 500px;
+        max-height: 500px;
+      }
+      @include sm-block {
+        margin-left: -20px;
+      }
 
       & img {
         max-width: 100%;
@@ -125,18 +205,46 @@
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: 500;
-      font-size: 27px;
-      line-height: 33px;
+      font-size: 2.69vh;
+      line-height: 3.29vh;
       color: #fff;
       max-width: 240px;
-      margin-top: 140px;
+      margin-top: 13.98vh;
+      @include lg-block {
+        font-size: 27px;
+        line-height: 33px;
+        margin-top: 140px;
+        left: -70px;
+      }
+      @include md-block {
+        font-size: 22px;
+        line-height: 28px;
+        max-width: 280px;
+        left: 0;
+        margin-top: 100px;
+      }
+      @include sm-block {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 120px;
+        margin-left: -30px;
+      }
     }
   }
 
   &__prize {
     position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 19.98vh;
+    left: 10.41vw;
+
+    @include lg-block {
+      position: relative;
+      top: -120px;
+      left: 0;
+    }
+    @include md-block {
+      top: -50px;
+    }
 
     &-data {
       display: flex;
@@ -151,13 +259,25 @@
       position: relative;
       font-style: normal;
       font-weight: bold;
-      font-size: 220px;
-      line-height: 277px;
+      font-size: 21.97vh;
+      line-height: 27.67vh;
       text-transform: uppercase;
       background: linear-gradient(180deg, #FFFFFF 0%, #7EC9FA 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       z-index: 2;
+      @include lg-block {
+        font-size: 200px;
+        line-height: 257px;
+      }
+      @include md-block {
+        font-size: 150px;
+        line-height: 200px;
+      }
+      @include sm-block {
+        font-size: 120px;
+        line-height: 180px;
+      }
     }
     // Тень не работает с -webkit-text-fill-color: transparent
     // поэтому пришлось дублировать
@@ -165,18 +285,32 @@
       z-index: 1;
       display: block;
       position: absolute;
-      top: 1px;
-      left: 1px;
+      top: 0.0999vh;
+      left: 0.052vw;
       width: 100%;
       height: 100%;
       font-weight: bold;
-      font-size: 220px;
-      line-height: 277px;
+      font-size: 21.97vh;
+      line-height: 27.67vh;
       text-transform: uppercase;
       background: linear-gradient(180deg, #FFFFFF 0%, #7EC9FA 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      @include lg-block {
+        font-size: 200px;
+        line-height: 257px;
+        top: 1px;
+        left: 1px;
+      }
+      @include md-block {
+        font-size: 150px;
+        line-height: 200px;
+      }
+      @include sm-block {
+        font-size: 120px;
+        line-height: 180px;
+      }
     }
 
     &-text {
@@ -187,41 +321,80 @@
       font-family: Montserra, sans-serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 24px;
-      line-height: 28px;
+      font-size: 2.39vh;
+      line-height: 2.79vh;
       color: #fff;
+      @include lg-block {
+        font-size: 22px;
+        line-height: 26px;
+      }
+      @include md-block {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
 
     &-final {
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 29px;
-      line-height: 35px;
+      font-size: 2.89vh;
+      line-height: 3.49vh;
       text-transform: uppercase;
       color: #fff;
+      @include lg-block {
+        font-size: 29px;
+        line-height: 35px;
+      }
+      @include md-block {
+        font-size: 24px;
+        line-height: 32px;
+      }
     }
 
     &-super {
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: 600;
-      font-size: 40px;
-      line-height: 49px;
+      font-size: 3.99vh;
+      line-height: 4.89vh;
       text-transform: uppercase;
       background: linear-gradient(180deg, #FFFFFF 0%, #7EC9FA 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @include lg-block {
+        font-size: 36px;
+        line-height: 42px;
+      }
+      @include md-block {
+        font-size: 28px;
+        line-height: 32px;
+      }
     }
 
     &-img {
       position: absolute;
       z-index: 3;
-      top: 120px;
-      left: -40px;
-      max-width: 476px;
-      max-height: 413px;
+      top: 11.98vh;
+      left: -2.08vw;
+      max-width: 24.79vw;
+      max-height: 41.25vh;
       width: 100%;
+
+      @include lg-block {
+        position: relative;
+        top: -160px;
+        left: 300px;
+        max-width: 476px;
+        max-height: 413px;
+        margin-bottom: -320px;
+      }
+      @include md-block {
+        top: 0;
+        left: 0;
+        margin-top: -80px;
+        margin-bottom: -120px;
+      }
 
       & img {
         max-width: 100%;
@@ -238,12 +411,21 @@
     bottom: 8.49vh;
     margin: auto;
     text-align: center;
+    @include lg-block {
+      position: relative;
+      bottom: 0;
+      margin-bottom: 32px;
+    }
   }
 
   & .container {
     background: linear-gradient(180deg, #007AC9 0%, #518ADC 20.36%, #7EA1FC 37.05%, #00A0E3 56.07%, #00A0E3 83.1%, #007AC9 96.12%);
     height: #{calc(100vh * 5)};
     overflow: hidden;
+    @include lg-block {
+      background: linear-gradient(180deg, #007AC9 0%, #518ADC 96.12%);
+      height: auto;
+    }
   }
 
   & .content__center {
@@ -252,25 +434,41 @@
     align-items: center;
     justify-content: center;
     margin-top: 6.6vh;
+    @include lg-block {
+      margin-top: 20px;
+    }
   }
 
   & .content__subtitle {
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 2.39vh;
+    line-height: 3.59vh;
     text-align: center;
     color: #fff;
-    margin-top: 24px;
+    margin-top: 2.39vh;
+    padding: 0 15px;
+    @include lg-block {
+      font-size: 18px;
+      line-height: 24px;
+      margin-top: 20px;
+    }
   }
 
   & .content__box {
     display: flex;
+    @include lg-block {
+      flex-direction: column;
+    }
   }
 
   & .content {
     padding-top: 5.5vh;
+    @include lg-block {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 
   & .content__left,
@@ -287,7 +485,6 @@
 
   & .content__left {
     position: relative;
-
     @include lg-block {
       box-sizing: border-box;
     }
@@ -299,14 +496,8 @@
     padding-left: 8.51vw;
     @include lg-block {
       padding: 20px 15px;
-      height: 90vh;
-    }
-
-    @include sm-block {
-      height: 70vh;
     }
   }
-
 }
 
 .mouse {

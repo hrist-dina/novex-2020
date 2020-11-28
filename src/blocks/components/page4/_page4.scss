@@ -13,11 +13,11 @@
             content: '';
             position: absolute;
             left: 0;
+            top: 0;
             bottom: 0;
             width: 100%;
             background: linear-gradient(180deg, #007AC9 0%, #518ADC 20.36%, #7EA1FC 37.05%, #00A0E3 56.07%, #00A0E3 83.1%, #007AC9 96.12%);
-            height: #{calc(100vh * 6)};
-            top: #{calc(100vh * -3)} ;
+            height: 100%;
             z-index: 0;
         }
 
@@ -66,6 +66,14 @@
     align-items: flex-end;
     justify-content: center;
     flex: 1 0 auto;
+    @include lg-block {
+        font-size: 15px;
+        line-height: 21px;
+    }
+    @include md-block {
+        font-size: 13px;
+        line-height: 19px;
+    }
 }
 
 .raffle {
@@ -80,6 +88,9 @@
 
         @include lg-block {
             margin: 0 0 24px 0;
+        }
+        @include sm-block {
+            margin-bottom: 16px;
         }
 
         &-inner {
@@ -96,40 +107,39 @@
 
         &__date {
             width: 100%;
-            max-width: 160px;
-            height: 54px;
-            padding: 18px 0 14px;
+            max-width: 8.33vw;
+            height: 2.8125vw;
+            padding: 1.8vh 0 1.35vh;
             box-sizing: border-box;
             position: absolute;
             bottom: 0;
-            left: -54px;
+            left: -2.8125vw;
             right: auto;
             top: 0;
             margin: auto;
             transform: rotate(270deg);
             font-style: normal;
             font-weight: bold;
-            font-size: 16px;
-            line-height: 22px;
+            font-size: 1.59vh;
+            line-height: 2.19vh;
             text-align: center;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: #007AC9;
             white-space: nowrap;
-        }
-
-        &__month {
-            font-size: 27px;
-            line-height: 32px;
-            @include notebook {
-                font-size: 24px;
-                line-height: 28px;
+            @include lg-block {
+                max-width: 160px;
+                height: 54px;
+                padding: 18px 0 14px;
+                left: -54px;
+                font-size: 14px;
+                line-height: 22px;
             }
         }
 
         &__content {
             width: 100%;
-            border-left: 54px transparent solid;
+            border-left: 2.8125vw transparent solid;
             padding: 20px 23px 20px 27px;
             box-sizing: border-box;
             display: flex;
@@ -145,12 +155,14 @@
                 height: 100%;
                 background: url(icon-card-sip()) space round;
             }
-            @include notebook {
-                padding: 17px 14px 17px 20px;
+            @include lg-block {
+                border-left: 54px transparent solid
             }
-
             @include sm-block {
                 flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 12px 18px 12px 20px;
             }
 
 
@@ -165,6 +177,7 @@
 
                 @include sm-block {
                     width: 100%;
+                    padding-right: 0;
                     margin-bottom: 16px;
                 }
             }
@@ -173,30 +186,74 @@
         &__name {
             font-style: normal;
             font-weight: 500;
-            font-size: 24px;
-            line-height: 32px;
+            font-size: 2.39vh;
+            line-height: 3.19vh;
             color: #242424;
+            @include lg-block {
+                font-size: 24px;
+                line-height: 32px;
+            }
+            @include md-block {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            @include md-block {
+                font-size: 16px;
+                line-height: 22px;
+            }
         }
 
         &__city {
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 22px;
+            font-size: 1.59vh;
+            line-height: 2.19vh;
             color: #676767;
-            margin-top: 8px;
+            margin-top: 0.79vh;
+            @include lg-block {
+                font-size: 16px;
+                line-height: 22px;
+                margin-top: 8px;
+            }
+            @include md-block {
+                font-size: 14px;
+                line-height: 20px;
+                margin-top: 6px;
+            }
+            @include md-block {
+                font-size: 13px;
+                line-height: 16px;
+            }
         }
 
         &__number {
             font-style: normal;
             font-weight: 400;
-            font-size: 20px;
-            line-height: 28px;
+            font-size: 1.99vh;
+            line-height: 2.79vh;
             color: #676767;
-            margin-top: 8px;
+            margin-top: 0.79vh;
+            @include lg-block {
+                font-size: 20px;
+                line-height: 28px;
+                margin-top: 8px;
+            }
+            @include md-block {
+                font-size: 18px;
+                line-height: 24px;
+                margin-top: 6px;
+            }
+            @include sm-block {
+                font-size: 16px;
+                line-height: 22px;
+            }
         }
 
         &__prize {
+            @include lg-block {
+                width: 100px;
+                height: 100px;
+            }
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -206,6 +263,10 @@
             justify-content: center;
 
             &-img {
+                @include lg-block {
+                    width: 70px;
+                    height: 70px;
+                }
                 width: 80px;
                 height: 80px;
                 & img {

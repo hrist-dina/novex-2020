@@ -22,17 +22,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-size: cover;
       background-image: url("../img/page3/decor.png");
     }
     @include lg-block {
+      padding-top: 40px;
       width: 100%;
-      height: 80vh;
-    }
-
-    @include sm-block {
-      width: 100%;
-      height: 60vh;
+      height: auto;
     }
   }
 
@@ -52,36 +47,52 @@
       top: 0;
       background: url("../img/page3/bg.png") no-repeat center;
       background-size: cover;
-      max-width: 1232px;;
+      max-width: 64.16vw;
       width: 100%;
       height: 100%;
+      @include lg-block {
+        max-width: 100%;
+        max-height: 100%;
+        background-size: contain;
+        background-position: right bottom;
+      }
     }
     @include lg-block {
-      padding-top: 40px;
       width: 100%;
+      position: relative;
+      height: 70vh;
+      padding: 40px;
+    }
+    @include sm-block {
+      height: 50vh;
     }
   }
 
 
   &__title {
     font-weight: 800;
-    font-size: 80px;
-    line-height: 84px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
   }
 
   &__text {
-    max-width: 670px;
+    max-width: 34.89vw;
     margin-top: 4.4vh;
     margin-bottom: 5.7vh;
     font-family: Geometria, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 1.79vh;
+    line-height: 2.69vh;
     color: #fff;
+    @include lg-block {
+      max-width: 670px;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 32px;
+      margin-bottom: 36px;
+    }
 
     & a {
       font-weight: 600;
@@ -93,6 +104,13 @@
 
   &__buttons {
     display: flex;
+    align-items: flex-start;
+    @include sm-block {
+      flex-direction: column;
+      & .button {
+        margin-right: 0;
+      }
+    }
   }
 
   & .button {
