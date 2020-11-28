@@ -1,20 +1,8 @@
 .page-1 {
 
-  & .title {
-    font-weight: 500;
-    font-size: 4.47vh  /* 44/9.85 */;
-    line-height: 4.87vh  /* 48/9.85 */;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 2.44vh  /* 24/9.85 */;
-
-    & b {
-      text-transform: uppercase;
-    }
-  }
-
   & .container {
     display: flex;
+    overflow: hidden;
     background: radial-gradient(38.62% 103.92% at 40.05% 36.75%, #FFC2D1 0%, #FAACC8 44.27%, #EF80A8 100%);
 
     @include lg-block {
@@ -28,7 +16,7 @@
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
-    width: 50%;
+    padding-top: 10.5vh;
     @include lg-block {
       width: 100%;
       box-sizing: border-box;
@@ -37,119 +25,177 @@
 
   & .content__left {
     position: relative;
-    background: url("../img/page1/bg-left.png"), no-repeat center;
-    background-size: cover;
-    overflow: hidden;
     z-index: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 9.85vh  /* 97/9.85 */;
-
+    width: 45%;
     @include lg-block {
       padding: 40px 15px;
     }
-
 
     &:before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: -120px;
+      left: -120px;
       z-index: -1;
-      background: linear-gradient(139.42deg, rgba(20, 167, 221, 0.9) 11.41%, rgba(17, 78, 150, 0.92) 54.3%);
+      width: 1003px;
+      height: 933px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+      border-radius: 40px;
+      transform: rotate(8deg);
+    }
+
+    & .title {
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 84px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #EEAED0;
+      text-align: center;
+      align-self: center;
     }
   }
 
   & .content__right {
-    padding-top: 8.53vh  /* 84/9.85 */;
-    background: no-repeat center url('../img/page1/bg-right.png');
-    background-size: cover;
     align-items: center;
+    padding-right: 2vw;
+    padding-left: 0;
+    width: 55%;
 
     @include lg-block {
       padding: 40px 15px;
     }
+
+    & .title {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 84px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+    }
   }
 
   &__text {
-    font-weight: 500;
-    font-size: 3.25vh  /* 32/9.85 */;
-    line-height: 4.06vh  /* 40/9.85 */;
-    text-align: center;
-    color: #fff;
-    width: 100%;
+    margin-top: 4.8vh;
   }
 
-  &__date {
-    font-size: 2.44vh  /* 24/9.85 */;
-    line-height: 3.65vh  /* 36/9.85 */;
-    color: #fff;
-    margin-bottom: 2.74vh  /* 27/9.85 */;
-  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    list-style: none;
+    counter-reset: counter;
 
-  &__amount {
-    width: 100%;
-    margin-top: 4.06vh  /* 40/9.85 */;
-    margin-bottom: 6.09vh  /* 60/9.85 */;
-    font-weight: bold;
-    font-size: 4.87vh  /* 48/9.85 */;
-    line-height: 4.06vh  /* 40/9.85 */;
-    text-align: center;
-    color: #fff;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
 
-    & span {
-      margin-left: 8px;
-      font-size: 24px;
-      line-height: 40px;
-    }
-  }
-
-  &__products {
-    max-width: 718px;
-    width: 100%;
-    max-height: 474px;
-    box-sizing: border-box;
-
-    @include lg-block {
+    & li {
+      max-width: 550px;
       position: relative;
-      margin-bottom: 20px;
-    }
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      color: #474747;
+      margin-bottom: 40px;
+      counter-increment: counter;
+      padding-left: 106px;
 
-    & img {
-      max-width: 100%;
-      max-height: 100%;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: counter(counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 120px;
+        line-height: 120px;
+        text-align: right;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        color: #F1ECF8;
+      }
     }
   }
 
-  &__raffle {
-    width: 100%;
-    height: 100%;
+  &__button {
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+  }
 
-    & .title {
-      font-weight: bold;
-      color: #007AC9;
-      font-size: 4.78vh  /* 32/9.85 */;
-      line-height: 4.78vh  /* 64/9.85 */;
-      text-align: center;
-      margin-bottom: 4.06vh  /* 40/9.85 */;
+  &__product {
+    position: relative;
+    display: inline-block;
+    max-width: 280px;
+    margin-right: 40px;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
     }
 
-    & .products__img {
-      height: #{'calc(100% - 8.82vh)'};
+    &-list {
+      padding-top: 3vh;
+      width: 100%;
+    }
+
+    &-count {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 60px;
+      height: 60px;
+      padding: 11px 12px 15px;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      text-align: center;
+      color: #fff;
+      background: #FF4F73;
+      box-sizing: border-box;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: center;
+
+      & + & {
+        margin-top: 1.2vh;
+      }
+    }
+
+    &-img {
+      max-width: 280px;
+      max-height: 280px;
+      width: 100%;
 
       & img {
-        margin: auto;
-        display: block;
         max-width: 100%;
         max-height: 100%;
       }
+    }
+
+    &-name {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: #fff;
+      margin-top: 20px;
+      padding: 0 30px;
+      box-sizing: border-box;
     }
   }
 }

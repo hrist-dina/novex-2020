@@ -78,8 +78,19 @@ export class Menu {
     }
 
     setActiveLink(link) {
-        if ( link ) {
+        if (link) {
             link.closest('.menu__item').addClass('active').siblings().removeClass('active');
+
+            const menuBtn = $('.js-menu-panel');
+            const href = link.attr('href');
+            if (!menuBtn.length) {
+                return;
+            }
+            if (href === '#prizes') {
+                menuBtn.addClass('colored');
+            } else {
+                menuBtn.removeClass('colored');
+            }
         }
     }
 }

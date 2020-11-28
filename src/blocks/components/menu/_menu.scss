@@ -5,10 +5,11 @@
   right: 50%;
   left: 0;
   z-index: 1000;
-  background: url('../img/noise.png'), #D74C6D;
+  background: #007AC9;
   -moz-transition: left 0.3s ease;
   -webkit-transition: left 0.3s ease;
   transition: left 0.3s ease;
+  padding-left: 10vw;
 
 }
 
@@ -101,10 +102,11 @@
 .menu .menu__link {
   border-bottom: none;
   position: relative;
-  font-weight: bold;
+  font-style: normal;
+  font-weight: 500;
   font-size: 28px;
   line-height: 35px;
-  color: #FFC4D1;
+  color: #CAE3ED;
   border-bottom: none;
   text-decoration: none;
   cursor:pointer;
@@ -155,6 +157,10 @@
     width: 40px;
     height: 26px;
     cursor: pointer;
+  }
 
+  &.colored &__icon svg path {
+    fill: #E780A5;
+    transition: ease-in-out .3s;
   }
 }

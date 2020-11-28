@@ -1,38 +1,20 @@
 .page-2 {
 
-  & .button {
-    width: 100%;
-  }
-
   &__title {
-    margin-top: 2.84vh  /* 28/9.85 */;
-    font-weight: bold;
-    font-size: 4.47vh  /* 44/9.85 */;
-    line-height: 5.69vh  /* 56/9.85 */;
-    z-index: 1;
-    margin-bottom: 1.22vh  /* 12/9.85 */;
-
-    @include lg-block {
-      margin-top: 0;
-    }
-
-    @include sm-block {
-      font-size: 28px;
-    }
-  }
-
-  &__desc {
-    font-size: 3.25vh  /* 32/9.85 */;
-    line-height: 4.87vh  /* 48/9.85 */;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 84px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
   }
 
+
   &__check {
     position: absolute;
-    top: 30.46vh  /* 300/9.85 */;
-    bottom: 6.09vh  /* 60/9.85 */;
+    top: auto;
+    bottom: -12vh;
     left: 0;
     right: auto;
     margin: auto;
@@ -88,6 +70,18 @@
   & .container {
     width: 100%;
     display: flex;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      background: linear-gradient(180deg, #007AC9 0%, #518ADC 20.36%, #7EA1FC 37.05%, #00A0E3 56.07%, #00A0E3 83.1%, #007AC9 96.12%);
+      height: #{calc(100vh * 5)};
+      top: #{calc(100vh * -2)} ;
+      z-index: 0;
+    }
     @include lg-block {
       flex-direction: column;
     }
@@ -97,7 +91,7 @@
     position: relative;
     width: 50vw;
     margin: 0;
-    background: radial-gradient(50% 50% at 50% 50%, #FFC2D1 0%, #EF94A9 44.27%, #D74C6D 100%);
+    padding-top: 10.4vh;
     @include lg-block {
       width: 100%;
       overflow: hidden;
@@ -105,7 +99,7 @@
   }
 
   & .content__right {
-    background: url('../img/noise.png'), #007AC9;
+    position: relative;
     width: 50vw;
     margin: 0;
     z-index: 1;
@@ -114,6 +108,19 @@
     @include lg-block {
       width: 100%;
       overflow: hidden;
+    }
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      background: #FFFFFF;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+      border-radius: 40px;
+      transform: rotate(8.4deg);
+      width: 1027px;
+      height: 1151px;
     }
   }
 
@@ -133,24 +140,6 @@
     bottom: 0;
     z-index: -1;
   }
-
-  &__money {
-    position: absolute;
-    top: 0;
-    bottom: 18.15vh;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background: no-repeat center url("../img/page2/money.png");
-    background-size: contain;
-    max-width: 859px;
-    width: 100%;
-    height: 800px;
-
-    @include lg-block {
-      transform: scale(1.2);
-    }
-  }
 }
 
 
@@ -160,8 +149,10 @@
 
 .ticket-form__elem {
   margin-bottom: 2.44vh  /* 24/9.85 */;
-  border: 2px solid transparent;
+  background: #fff;
+  border: 1px solid #CDD2D5;
   box-sizing: border-box;
+  border-radius: 6px;
 
   &.error {
     border-color: #FF4F73;
@@ -180,12 +171,13 @@
 .ticket-form__elem-title {
   white-space: nowrap;
   position: absolute;
-  top: 14px;
+  top: 21px;
   left: 0;
   color: #5a6555;
+  font-family: Geometria, sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 2.2rem;
+  font-size: 18px;
+  line-height: 24px;
   padding: 0 25px;
   -moz-transition: top 0.3s ease, font-size 0.3s ease;
   -webkit-transition: top 0.3s ease, font-size 0.3s ease;
@@ -209,17 +201,20 @@
   outline: none;
   border: none;
   background-color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 3.3rem;
+  font-family: Geometria, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #443E3E;
   box-sizing: border-box;
-  height: 60px;
-  padding: 15px 25px 0;
+  height: 64px;
+  padding: 6px 24px 0;
   width: 100%;
-  color: #15240d;
   -moz-transition: border 0.3s ease;
   -webkit-transition: border 0.3s ease;
   transition: border 0.3s ease;
+  border-radius: 6px;
 
   @include md-block {
     height: 50px;
@@ -234,10 +229,11 @@
 }
 
 .ticket-form__verification {
-  margin-bottom: 24px;
+  margin-left: 24px;
   font-size: 1.62vh  /* 16/9.85 */;
   line-height: 2.44vh  /* 24/9.85 */;
   color: #fff;
+  width: #{calc(100% - 355px)};
 
   @include lg-block {
     margin-top: 20px;
@@ -245,6 +241,11 @@
     font-size: 16px;
     line-height: 24px;
   }
+}
+
+.ticket-form__footer {
+  display: flex;
+  margin-top: 4vh;
 }
 
 .ticket-form__verification-check {
@@ -258,17 +259,24 @@
   width: #{calc(100% - 50px)};
   display: inline-block;
   vertical-align: top;
+  font-family: Geometria, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  color: #757070;
+
 }
 
 .ticket-form__verification-text a {
   border: none;
-  color: #fff;
+  color: #757070;
   border-bottom: 1px solid transparent;
   text-decoration: none;
 }
 
 .ticket-form__verification-text a:hover {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #757070;
 }
 
 .ticket-form__elem.error input {
@@ -280,10 +288,15 @@
   border-color: #569b28;
 }
 
+.ticket-form__elem.active {
+  filter: drop-shadow(0px 6px 12px rgba(0, 160, 227, 0.12));
+}
+
 .ticket-form__elem.active .ticket-form__elem-title {
   top: 4px;
-  font-size: 0.87rem;
-  color: #5a6555;
+  font-size: 15px;
+  line-height: 19px;
+  color: #CCCCCC;
 }
 
 .tablet .active .ticket-form__elem-title {
@@ -291,10 +304,7 @@
   font-size: 1.2rem;
 }
 
-.error .ticket-form__elem-title {
-  top: 0;
-  font-size: 0.87rem;
-}
+
 
 .tablet .error .ticket-form__elem-title {
   top: -25px;
@@ -302,21 +312,24 @@
   color: #ED395E;
 }
 
+
+
 .ticket-form__elem.success input {
   border-color: #e5e9ed;
 }
 
-.success .ticket-form__elem-title{
-  top: 0;
-  font-size: 0.87rem;
-  color: #5a6555;
+.ticket-form__elem.success .ticket-form__elem-title {
+  top: 4px;
+  font-size: 15px;
+  line-height: 19px;
+  color: #CCCCCC;
 }
 
 .error.success .ticket-form__elem-title {
   color: #FF4F73;
 }
 
-.tablet .success .ticket-form__elem-title{
+.tablet .success .ticket-form__elem-title {
   top: -25px;
   font-size: 1.2rem;
   color: rgba(72, 11, 46, .6);
@@ -326,7 +339,7 @@
   position: absolute;
   bottom: -1.3em;
   width: 100%;
-  color: #fff;
+  color: #FF4F73;
   font-size: 0.9em;
   margin-top: 1px;
   margin-bottom: 0;
@@ -407,10 +420,9 @@
 
 .checkbox-hide:checked + span:after {
   content: "";
-  width: 21px;
-  height: 21px;
+  width: 24px;
+  height: 24px;
   background-color: transparent;
-  background-image: url(icon-check());
   background-position: center;
   background-repeat: no-repeat;
   display: block;
@@ -423,16 +435,20 @@
 
 .checkbox-show {
   vertical-align: top;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 4px;
+  border: 2px solid #007AC9;
   display: inline-block;
   cursor: pointer;
+  box-sizing: border-box;
 
   background: #fff;
-  .checkbox-hide:checked + &:after {
-    background-image: url(icon-check('fff'));
+  .checkbox-hide:checked + & {
+    background-image: url(icon-check());
     background-color: #007AC9;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 

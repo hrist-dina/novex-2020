@@ -116,9 +116,14 @@ h1, h2, h3, h4, h5, h6, ul {
 }
 
 .title {
-	font-size: 5.48vh  /* 54/9.85 */;
-	line-height: 6.5vh  /* 64/9.85 */;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 80px;
+	line-height: 84px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
 	color: #fff;
+
 	@include lg-block {
 		font-size: 44px;
 		line-height: 54px;
@@ -306,7 +311,6 @@ h1, h2, h3, h4, h5, h6, ul {
 	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none;
-	background: #FF4F73;
 	cursor: pointer;
 	@include transition();
 
@@ -316,7 +320,7 @@ h1, h2, h3, h4, h5, h6, ul {
 	}
 
 	&:hover {
-		background: #ff3856;
+		box-shadow: 0 35px 125px rgba(255, 183, 198, 0.8);
 	}
 
 	&:active {
@@ -328,6 +332,38 @@ h1, h2, h3, h4, h5, h6, ul {
 		cursor: not-allowed;
 	}
 
+	&--small {
+		padding: 22px 52px 20px;
+		background: linear-gradient(180deg, #FF4F73 0%, #F23B60 100%);
+		border-radius: 12px;
+		box-shadow: none;
+		border: none;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	&--submit {
+		max-width: 332px;
+		width: 100%;
+		padding: 34px 32px;
+		background: linear-gradient(180deg, #FF4F73 0%, #F23B60 100%);
+		border-radius: 12px;
+		font-family: Geometria, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #fff;
+		border: none;
+		box-shadow: none;
+	}
 }
 
 .block-vertical-center {
