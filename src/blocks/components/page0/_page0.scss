@@ -241,6 +241,7 @@
       position: relative;
       top: -120px;
       left: 0;
+      z-index: 0;
     }
     @include md-block {
       top: -50px;
@@ -415,6 +416,7 @@
       position: relative;
       bottom: 0;
       margin-bottom: 32px;
+      z-index: 1;
     }
   }
 

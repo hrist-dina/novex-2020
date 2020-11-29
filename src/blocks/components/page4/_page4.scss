@@ -48,6 +48,11 @@
         padding-top: 10.4vh;
         padding-bottom: 6.8vh  /* 67/9.85 */;
         z-index: 2;
+        @include lg-block {
+            min-height: auto;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
     }
 
     &__title {
@@ -69,10 +74,12 @@
     @include lg-block {
         font-size: 15px;
         line-height: 21px;
+        margin-top: 80px;
     }
     @include md-block {
         font-size: 13px;
         line-height: 19px;
+        margin-top: 40px;
     }
 }
 
@@ -96,8 +103,10 @@
         &-inner {
             display: flex;
             position: relative;
+            justify-content: flex-end;
             @include sm-block {
                 flex-direction: column;
+                justify-content: flex-start;
             }
         }
 
@@ -138,8 +147,7 @@
         }
 
         &__content {
-            width: 100%;
-            border-left: 2.8125vw transparent solid;
+            width: #{calc(100% - 2.8125vw)};
             padding: 20px 23px 20px 27px;
             box-sizing: border-box;
             display: flex;
@@ -156,13 +164,17 @@
                 background: url(icon-card-sip()) space round;
             }
             @include lg-block {
-                border-left: 54px transparent solid
+                border-left: 54px transparent solid;
+                width: 100%;
             }
             @include sm-block {
+                padding: 12px 18px 12px 20px;
+            }
+
+            @include to(360px) {
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: flex-start;
-                padding: 12px 18px 12px 20px;
             }
 
 
@@ -176,6 +188,9 @@
                 }
 
                 @include sm-block {
+                    width: #{'calc(100% - 100px)'};
+                }
+                @include to(360px) {
                     width: 100%;
                     padding-right: 0;
                     margin-bottom: 16px;

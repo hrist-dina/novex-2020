@@ -340,15 +340,18 @@ h1, h2, h3, h4, h5, h6, ul {
 	color: #fff;
 	text-decoration: none;
 	cursor: pointer;
+	outline: none;
 	@include transition();
 
 	@include lg-block {
+		padding: 20px 44px;
 		font-size: 16px;
 		line-height: 21px;
 	}
 
-	&:hover {
-		box-shadow: 0 35px 125px rgba(255, 183, 198, 0.8);
+	&:not(:disabled):hover {
+		box-shadow: 0 20px 80px rgba(242, 59, 96, .8);
+		background: linear-gradient(180deg, #f23b60 0%, #f90539 100%);
 	}
 
 	&:active {
@@ -356,7 +359,7 @@ h1, h2, h3, h4, h5, h6, ul {
 	}
 
 	&[disabled] {
-		opacity: .8;
+		opacity: .7;
 		cursor: not-allowed;
 	}
 
@@ -373,6 +376,11 @@ h1, h2, h3, h4, h5, h6, ul {
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: #fff;
+		@include lg-block {
+			font-size: 14px;
+			line-height: 20px;
+			padding: 18px 24px 16px;
+		}
 	}
 
 	&--submit {
@@ -393,6 +401,9 @@ h1, h2, h3, h4, h5, h6, ul {
 		box-shadow: none;
 		@include lg-block {
 			max-width: 332px;
+			padding: 24px 22px;
+			font-size: 14px;
+			line-height: 20px;
 		}
 	}
 }
